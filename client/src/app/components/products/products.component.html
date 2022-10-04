@@ -1,0 +1,9 @@
+<br>
+<div *ngFor="let product of products">
+    <div>Product id ------- {{product.id}}</div>
+    <div>Product Name -- {{product.name}}</div>
+    <div>Product Price --- {{product.price}}</div>
+    <button (click) = 'deleteProduct(product.id)' >delete</button>
+    <button (click) = 'update(product.id)'>update</button>
+    <br><br>
+</div>
