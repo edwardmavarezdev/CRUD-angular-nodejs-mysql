@@ -28,7 +28,6 @@ export class ProductsComponent implements OnInit {
     this.productsService.getProducts().subscribe(
       (result: any) => {
         this.products = result;
-        console.log(this.products)
       }
     )
   }
@@ -37,7 +36,6 @@ export class ProductsComponent implements OnInit {
     
     this.productsService.deleteProduct(id).subscribe(
       (result: any) => {
-        console.log(result);
         this.get();
       }
     )

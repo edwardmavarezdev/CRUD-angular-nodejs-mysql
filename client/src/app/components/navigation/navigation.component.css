@@ -12,8 +12,8 @@ ul{
     margin:0;
 }
 
-ul a{
-    background-color: rgb(76, 139, 173);
+ul button{
+    background-color: rgb(63, 130, 231);
     padding:.5em;
     margin:1em;
     display:inline-block;
@@ -22,10 +22,11 @@ ul a{
     color:white;
     text-decoration: none;
     font-family: sans-serif;
+    outline: none;
 }
-ul a:hover{
+ul button:hover{
     outline:solid rgb(48, 19, 153) 1px
 }
-ul a:active{
+ul button:active{
     color:rgb(0, 14, 143);
 }

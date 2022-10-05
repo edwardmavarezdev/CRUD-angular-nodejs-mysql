@@ -17,7 +17,7 @@ export class ClientsComponent implements OnInit {
     age:'',
     cellNumber:'',
     address:'',
-    ProductId:'none;'
+    ProductId:''
   }]
 
  

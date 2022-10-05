@@ -1,9 +1,12 @@
 
 <form>
-    <div class="formElement">
-        <p>Add Name</p><input type="text" name='name' [(ngModel)]="product.name" placeholder="Name" autofocus>
-        <p>Add Price</p><input type="text" name='price' [(ngModel)]="product.price" placeholder="Price">
+    <div class="container">
+        <div class="objects-container">
+            <div class="objects">
+                <p>Add Name</p><input type="text" name='name' [(ngModel)]="product.name" placeholder="Name" autofocus>
+                <p>Add Price</p><input type="text" name='price' [(ngModel)]="product.price" placeholder="Price">
+                <button (click) = 'validateProduct()' >save</button>
+            </div>
+        </div>
     </div>
-    <button (click) = 'validateProduct()' >save</button>
 </form>
-    

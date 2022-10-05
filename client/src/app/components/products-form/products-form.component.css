@@ -1,0 +1,21 @@
+.formElement{
+    display:flex;
+    flex-direction:column;
+}
+
+.objects p {
+    margin:0;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+button{
+    
+    display: block;
+    margin:  0 auto;
+    margin-top: 12px;
+    background-color: rgb(249, 72, 255);
+    color: black;
+}
+

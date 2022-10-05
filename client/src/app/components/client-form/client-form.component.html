@@ -1,11 +1,17 @@
 
 <form>
-    <div class="formElement">
-        <p>Add Name</p><input type="text" name='name' [(ngModel)]="client.name" placeholder="Name" autofocus>
-        <p>Add Age</p><input type="text" name='age' [(ngModel)]="client.age" placeholder="Age">
-        <p>Add Cellphone</p><input type="text" name='cell' [(ngModel)]="client.cellNumber" placeholder="Cellphone Number">
-        <p>Add Address</p><input type="text" name='address' [(ngModel)]="client.address" placeholder="Address">
+    <div class="container">
+        <div class="objects-container">
+            <div class="objects">
+                <p>Add Name</p><input type="text" name='name' [(ngModel)]="client.name" placeholder="Name" autofocus>
+                <p>Add Age</p><input type="text" name='age' [(ngModel)]="client.age" placeholder="Age">
+                <p>Add Cellphone</p><input type="text" name='cell' [(ngModel)]="client.cellNumber" placeholder="Cellphone Number">
+                <p>Add Address</p><input type="text" name='address' [(ngModel)]="client.address" placeholder="Address">
+                <br>
+                <button (click) = 'validateClient()'>save</button>
+            </div>
+        </div>
     </div>
-    <button (click) = 'validateClient()' >save</button>
+    
 </form>
     

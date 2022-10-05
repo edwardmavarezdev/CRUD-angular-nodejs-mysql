@@ -1,19 +1,18 @@
 
 <div class="container">
-    <div class="clients-container">
-        <div class = 'clients' *ngFor="let client of clients">
-            <div><span class="valueTitle">Client id : </span><span class="value">{{client.id}}</span></div>
-            <div><span class="valueTitle">Client Name : </span><span class="value">{{client.name}}</span></div>
-            <div><span class="valueTitle">Client age : </span><span class="value">{{client.age}}</span></div>
-            <div><span class="valueTitle">Client Cellphone : </span><span class="value">{{client.cellNumber}}</span></div>
-            <div><span class="valueTitle">Client Address : </span><span class="value">{{client.address}}</span></div>
-            <div><span class="valueTitle">Client Id service : </span><span class="value">{{client.ProductId}}</span></div>
-            <div>
-                <button (click) = 'deleteClient(client.id)' >delete</button>
-                <button (click) = 'update(client.id)'>update</button>
-                <button (click) = 'addService(client.id)'>add service</button>
+    <div class="objects-container">
+        <div class = 'objects' *ngFor="let client of clients">
+            <div><p><strong> Client Id : </strong></p><p>{{client.id}}</p></div>
+            <div><p><strong> Client Name : </strong></p><p>{{client.name}}</p></div>
+            <div><p><strong> Client age : </strong></p><p>{{client.age}}</p></div>
+            <div><p><strong> Client Cellphone : </strong></p><p>{{client.cellNumber}}</p></div>
+            <div><p><strong> Client Address : </strong></p><p>{{client.address}}</p></div>
+            <div><p><strong> Client Id service : </strong></p><p>{{client.ProductId ? client.ProductId : "None"}}</p></div>
+            <div class="buttons">
+                <button (click) = 'deleteClient(client.id)' >Delete</button>
+                <button (click) = 'update(client.id)'>Update</button>
+                <button (click) = 'addService(client.id)'>Add/Update Service</button>
             </div>
-            <br><br>
         </div>
     </div>
 </div>

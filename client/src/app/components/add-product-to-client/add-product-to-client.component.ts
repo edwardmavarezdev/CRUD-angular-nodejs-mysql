@@ -66,13 +66,11 @@ export class AddProductToClientComponent implements OnInit {
   selectThisProduct(id:any){
 
     this.clients.ProductId = id;
-   // console.log(this.clients);
 
      this.clientService.updateClient(this.clients.id,this.clients).subscribe(
       (result: any) => {
         this.clients = result;
-        console.log(result);
-        //this.router.navigate(['/clients']);
+        this.router.navigate(['/clients']);
       }
     )
   }
