@@ -1,11 +1,17 @@
-<br>
-<div *ngFor="let client of clients">
-    <div>Client id ----------- {{client.id}}</div>
-    <div>Client Name ------ {{client.name}}</div>
-    <div>Client age --------- {{client.age}}</div>
-    <div>Client Cellphone - {{client.cellNumber}}</div>
-    <div>Client Address --- {{client.address}}</div>
-    <button (click) = 'deleteClient(client.id)' >delete</button>
-    <button (click) = 'update(client.id)'>update</button>
-    <br><br>
+
+<div class="container">
+    <div class="clients-container">
+        <div class = 'clients' *ngFor="let client of clients">
+            <div><span class="valueTitle">Client id : </span><span class="value">{{client.id}}</span></div>
+            <div><span class="valueTitle">Client Name : </span><span class="value">{{client.name}}</span></div>
+            <div><span class="valueTitle">Client age : </span><span class="value">{{client.age}}</span></div>
+            <div><span class="valueTitle">Client Cellphone : </span><span class="value">{{client.cellNumber}}</span></div>
+            <div><span class="valueTitle">Client Address : </span><span class="value">{{client.address}}</span></div>
+            <div>
+                <button (click) = 'deleteClient(client.id)' >delete</button>
+                <button (click) = 'update(client.id)'>update</button>
+            </div>
+            <br><br>
+        </div>
+    </div>
 </div>

@@ -44,6 +44,7 @@ export class ClientFormComponent implements OnInit {
     this.clientService.saveClient(this.client).subscribe(
       (result: any) => {
         this.client = result;
+        console.log(this.client)
         this.router.navigate(['/clients']);
       }
     )

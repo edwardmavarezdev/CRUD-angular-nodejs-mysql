@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from "../database/database.js"; 
-import { Product } from './products.js';
+import { sequelize } from "../database/database.js";
+
 
 export const Client = sequelize.define('client',{
     id:{
@@ -11,16 +11,6 @@ export const Client = sequelize.define('client',{
     name:{ type:DataTypes.STRING },
     age:{ type: DataTypes.INTEGER },
     cellNumber:{ type: DataTypes.STRING},
-    address:{ type: DataTypes.STRING }
+    address:{ type: DataTypes.STRING },
 });
 
-Client.hasMany(Product,{
-    foreignKey: 'ClientId',
-    SourceKey: 'id'
-});
-
-
-Product.hasMany(Client,{
-    foreignKey: 'ProductId',
-    targetId: 'id'
-})

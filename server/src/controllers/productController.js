@@ -13,9 +13,9 @@ class IndexController {
 
         async create (req, res){
             try {
-                const {id, name, price} = req.body;
+                const {id, name, price, ClientId} = req.body;
                 const newProduct = await Product.create({
-                    id, name, price
+                    id, name, price, ClientId
                 });
                 res.json(newProduct);
             } catch (error) {

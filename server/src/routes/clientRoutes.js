@@ -15,6 +15,7 @@ class ClientsRoutes {
         this.router.put('/:id', clientController.update);
         this.router.delete('/:id', clientController.delete);
         this.router.get('/:id', clientController.getOneById);
+     //   this.router.get('/:id/products', clientController.getProducts);
     }
 }
 

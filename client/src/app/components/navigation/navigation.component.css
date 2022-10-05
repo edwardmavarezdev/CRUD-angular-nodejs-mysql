@@ -1,0 +1,31 @@
+
+.nav{
+    background-color: rgb(216, 216, 216);
+    display: block;
+}
+
+ul{
+    list-style-type: none;  
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    margin:0;
+}
+
+ul a{
+    background-color: rgb(76, 139, 173);
+    padding:.5em;
+    margin:1em;
+    display:inline-block;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    color:white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+ul a:hover{
+    outline:solid rgb(48, 19, 153) 1px
+}
+ul a:active{
+    color:rgb(0, 14, 143);
+}

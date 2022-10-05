@@ -1,0 +1,38 @@
+
+.container{
+    background-color:red;
+}
+
+.clients-container{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    background-color: blue;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.clients{
+    background-color: rgb(182, 164, 164);
+    border:solid gray 2px;
+    padding: 1em;
+    justify-self: end;
+    margin: 1em;
+    border-radius: 1em;
+    font-family: sans-serif;
+}
+
+.clients div{
+    display: flex;
+    justify-content: center;
+    margin:3px;
+}
+
+
+.clients div span{
+    justify-self: end;
+}
+
+.value{
+    margin-left: 10px
+}

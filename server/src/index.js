@@ -19,7 +19,7 @@ class Server {
 
     async dbSequelize(){
         try {
-            await sequelize.sync({force:false});
+            await sequelize.sync();
 
           } catch (error) {
             console.error('Unable to connect to the database:', error);
