@@ -37,8 +37,7 @@ export class AddProductToClientComponent implements OnInit {
     ) { }
 
 
-    ClientUrl = this.activatedRoute.snapshot.params['id']
-
+  ClientUrl = this.activatedRoute.snapshot.params['id']
 
   ngOnInit(): void {
     this.getData()
@@ -56,18 +55,13 @@ export class AddProductToClientComponent implements OnInit {
     this.clientService.getClient(this.ClientUrl).subscribe(
       (result: any) => {
         this.clients = result;
-        console.log(this.clients);
-        
-        console.log(this.ClientUrl)
       }
     );
   }
    
   selectThisProduct(id:any){
-
     this.clients.ProductId = id;
-
-     this.clientService.updateClient(this.clients.id,this.clients).subscribe(
+     this.clientService.addProductToClient(this.clients.id,this.clients).subscribe(
       (result: any) => {
         this.clients = result;
         this.router.navigate(['/clients']);

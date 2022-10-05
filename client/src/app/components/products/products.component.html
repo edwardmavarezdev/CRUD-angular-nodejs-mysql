@@ -6,9 +6,9 @@
             <div><p><strong> Product Name : </strong></p><p>{{product.name}}</p></div>
             <div><p><strong> Product Price : </strong></p><p>{{product.price}}$</p></div>
             <div class="buttons">
-                <button (click) = 'deleteProduct(product.id)' >Delete</button>
+                <button class = 'delete' (click) = 'deleteProduct(product.id)' >Delete</button>
                 <button (click) = 'update(product.id)'>Update</button>
-                <button >See Afiliate CLients</button>
+                <button class="afiliate" (click) = 'seeAfiliateClients(product.id)'>See Afiliate CLients</button>
             </div>
         </div>
     </div>

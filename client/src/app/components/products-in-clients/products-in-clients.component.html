@@ -8,11 +8,6 @@
             <div><p><strong> Client Cellphone : </strong></p><p>{{client.cellNumber}}</p></div>
             <div><p><strong> Client Address : </strong></p><p>{{client.address}}</p></div>
             <div><p><strong> Client Id service : </strong></p><p>{{client.ProductId ? client.ProductId : "None"}}</p></div>
-            <div class="buttons">
-                <button class = 'delete'(click) = 'deleteClient(client.id)' >Delete</button>
-                <button (click) = 'update(client.id)'>Update</button>
-                <button class = 'service'(click) = 'addService(client.id)'>Add/Update Service</button>
-            </div>
         </div>
     </div>
 </div>

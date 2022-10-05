@@ -33,7 +33,6 @@ export class ProductsComponent implements OnInit {
   }
 
   deleteProduct(id:any){
-    
     this.productsService.deleteProduct(id).subscribe(
       (result: any) => {
         this.get();
@@ -45,5 +44,8 @@ export class ProductsComponent implements OnInit {
     this.router.navigate([`/products/update/${id}`])
   }
 
+  seeAfiliateClients(id:any){
+    this.router.navigate([`/products/${id}/clients`])
+  }
 
 }
