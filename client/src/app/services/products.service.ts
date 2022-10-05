@@ -12,15 +12,11 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
 
-  //clients service functions
+  //products service functions
 
   getProducts(){
     return this.http.get(`${this.API_URL}products`)
   } 
-
-  getProduct(id: string){
-    return this.http.get(`${this.API_URL}products/${id}`)
-  }
 
   saveProduct(product: any){
     return this.http.post(`${this.API_URL}products/add`,product);
@@ -33,5 +29,18 @@ export class ProductsService {
   updateProduct(id: string, product: any){
     return this.http.put(`${this.API_URL}products/${id}`,product)
   }
+
+  //individual read function
+
+  getProduct(id: string){
+    return this.http.get(`${this.API_URL}products/${id}`)
+  }
+
+  //relationships
+  
+  getClientsInProducts(id: string){
+    return this.http.get(`${this.API_URL}products/${id}/clients`)
+  }
+
 
 }

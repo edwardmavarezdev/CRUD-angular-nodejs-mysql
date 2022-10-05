@@ -10,11 +10,17 @@ class IndexRoutes {
     }
 
     config(){
+        //CRUD
         this.router.get('/', productController.list);
         this.router.post('/add', productController.create);
-        this.router.get('/:id', productController.getOneById);
         this.router.put('/:id', productController.update);
         this.router.delete('/:id', productController.delete);
+        //individual read
+        this.router.get('/:id', productController.getOneById);
+
+        //relations
+        this.router.get('/:id/clients', productController.getClients);
+        
     }
 }
 

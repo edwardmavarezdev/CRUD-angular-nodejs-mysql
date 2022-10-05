@@ -2,3 +2,70 @@
 body{
     margin:0;
 }
+
+html{
+   min-height: 100vh;
+    background-color: rgb(73, 73, 245);
+}
+
+
+.objects-container{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    
+}
+
+.objects{
+    background-color: rgb(182, 164, 164);
+    border:solid gray 2px;
+    padding: 1em;
+    justify-self: end;
+    margin: 1em;
+    border-radius: 1em;
+    font-family: sans-serif;
+    display: inline;
+}
+
+.objects div{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    margin:3px;
+    
+}
+
+.objects div p{
+    margin: 0 5px;
+}
+
+
+.objects .buttons{
+    display: flex;
+}
+
+button{
+    background-color: rgb(76, 139, 173);    
+    padding:.4em;
+    margin:0.5em;
+    display:inline-block;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color:white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+button:hover{
+    outline:solid rgb(48, 19, 153) 1px
+}
+button:active{
+    color:rgb(0, 14, 143);
+}
+
+.delete{
+    background-color:rgb(235, 76, 76);
+}

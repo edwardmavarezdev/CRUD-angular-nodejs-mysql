@@ -1,5 +1,6 @@
 import { Client } from '../models/clients.js'
 import { Product } from '../models/products.js'
+
 class ClientController {
 
     async list(req, res){
@@ -27,13 +28,14 @@ class ClientController {
     async update (req, res){
         try {
             const { id } = req.params;
-            const { name, age, cellNumber, address } = req.body;
+            const { name, age, cellNumber, address ,ProductId} = req.body;
             
             const client =  await Client.findByPk(id);
             client.name = name;
             client.age = age;
             client.cellNumber = cellNumber;
             client.address = address;
+            client.ProductId = ProductId;
 
             await client.save();
             res.json({"Client":client})
@@ -64,15 +66,31 @@ class ClientController {
             return res.status(500).json({Error:error.message})
         }
     }
-/*
-    async getProducts(req, res){
-        res.json(req.params['id'])
-        const { id } = req.params
-            await Product.findAll({
-                where:{}
-            })
+
+    //relationship 
+ 
+    async addProduct(req, res){
+        try{
+            const { id } = req.params;
+            const { ProductId } = req.body;
+
+            const client = await Client.findByPk(id);
+            client.ProductId = ProductId;
+            await client.save();
+            res.json(client);
+            
+            //one by one relation test
+            /*
+            const product = await Product.findByPk(ProductId);
+            product.ClientId = id;
+            await product.save();
+            res.json({client,product});
+            */
+        } catch (error) {
+            return res.status(500).json({Error:error.message})
+        }  
     }
- */
+
 }
 
 const clientController = new ClientController();

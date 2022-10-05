@@ -25,7 +25,7 @@ Client.belongsTo(Product,{
     targetId: 'id'
 })
 
-
+/*
 Client.hasMany(Product,{
     foreignKey: 'ClientId',
     SourceKey: 'id'
@@ -35,3 +35,4 @@ Product.belongsTo(Client,{
     foreignKey: 'ClientId',
     targetId: 'id'
 })
+*/

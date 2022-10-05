@@ -14,13 +14,9 @@ export class ClientsService {
 
   //clients service functions
 
-  getCLients(){
+  getClients(){
     return this.http.get(`${this.API_URL}clients`)
   } 
-
-  getClient(id: string){
-    return this.http.get(`${this.API_URL}clients/${id}`)
-  }
 
   saveClient(client: any){
     return this.http.post(`${this.API_URL}clients/add`,client);
@@ -34,6 +30,19 @@ export class ClientsService {
     return this.http.put(`${this.API_URL}clients/${id}`,client)
   }
 
+  //individual read function
+
+  getClient(id: any){
+    return this.http.get(`${this.API_URL}clients/${id}`)
+  }
+
+  //relationships
+
+  addProductToClient(id: string, client: any){
+    return this.http.put(`${this.API_URL}clients/${id}/addProduct`,client)
+  }
+
+  
 
 }
 

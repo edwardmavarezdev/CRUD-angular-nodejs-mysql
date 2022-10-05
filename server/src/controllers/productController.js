@@ -1,3 +1,4 @@
+import { Client } from '../models/clients.js'
 import { Product } from '../models/products.js'
 
 class IndexController {
@@ -56,6 +57,13 @@ class IndexController {
             } catch (error) {
                 return res.status(500).json({Error:error.message})
             }
+        }
+
+        //relationship
+        async getClients(req, res){
+            const { id } = req.params;
+                const clients = await Client.findAll({where:{ProductId:id}});
+                res.json(clients)
         }
 
     }

@@ -13,6 +13,8 @@ import { ClientsComponent } from './components/clients/clients.component';
 import { ClientsService } from './services/clients.service';
 import { ClientFormComponent } from './components/client-form/client-form.component';
 import { ProductsFormComponent } from './components/products-form/products-form.component';
+import { AddProductToClientComponent } from './components/add-product-to-client/add-product-to-client.component';
+import { ProductsInClientsComponent } from './components/products-in-clients/products-in-clients.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ProductsFormComponent } from './components/products-form/products-form.
     ClientsComponent,
     ClientFormComponent,
     ProductsFormComponent,
+    AddProductToClientComponent,
+    ProductsInClientsComponent,
   ],
   imports: [
     BrowserModule,

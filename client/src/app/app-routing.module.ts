@@ -6,6 +6,9 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ProductsComponent } from './components/products/products.component';
 import { ProductsFormComponent } from './components/products-form/products-form.component';
 
+import { AddProductToClientComponent } from './components/add-product-to-client/add-product-to-client.component';
+import { ProductsInClientsComponent } from './components/products-in-clients/products-in-clients.component';
+
 const routes: Routes = [
 
   {
@@ -40,6 +43,16 @@ const routes: Routes = [
     path:'products/update/:id',
     component:ProductsFormComponent
   },
+
+  
+  {
+    path:'clients/:id/addProductToCLient',
+    component:AddProductToClientComponent
+  },
+  {
+  path:'products/:id/clients',
+  component:ProductsInClientsComponent
+  }
 
 ];
 
