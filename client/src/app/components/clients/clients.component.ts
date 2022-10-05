@@ -16,7 +16,8 @@ export class ClientsComponent implements OnInit {
     name:'',
     age:'',
     cellNumber:'',
-    address:''
+    address:'',
+    ProductId:'none;'
   }]
 
  
@@ -28,7 +29,7 @@ export class ClientsComponent implements OnInit {
 
   get(){
     delete this.clients.id;
-    this.clientsService.getCLients().subscribe(
+    this.clientsService.getClients().subscribe(
       (result: any) => {
         this.clients = result;
       }
@@ -49,6 +50,10 @@ export class ClientsComponent implements OnInit {
     this.router.navigate([`/clients/update/${id}`])
   }
   
+  addService(id:any){
+    this.router.navigate([`/clients/${id}/addProductToCLient`])
+  }
+
 }
 
 

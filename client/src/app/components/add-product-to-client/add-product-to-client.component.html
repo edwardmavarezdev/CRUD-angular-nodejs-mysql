@@ -1,0 +1,6 @@
+<div *ngFor="let product of products">
+    <div>Product id ------- {{product.id}}</div>
+    <div>Product Name -- {{product.name}}</div>
+    <div>Product Price --- {{product.price}}</div>
+    <button (click) = 'selectThisProduct(product.id)' >Select This Product</button>
+</div>

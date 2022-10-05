@@ -7,9 +7,11 @@
             <div><span class="valueTitle">Client age : </span><span class="value">{{client.age}}</span></div>
             <div><span class="valueTitle">Client Cellphone : </span><span class="value">{{client.cellNumber}}</span></div>
             <div><span class="valueTitle">Client Address : </span><span class="value">{{client.address}}</span></div>
+            <div><span class="valueTitle">Client Id service : </span><span class="value">{{client.ProductId}}</span></div>
             <div>
                 <button (click) = 'deleteClient(client.id)' >delete</button>
                 <button (click) = 'update(client.id)'>update</button>
+                <button (click) = 'addService(client.id)'>add service</button>
             </div>
             <br><br>
         </div>
