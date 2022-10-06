@@ -10,7 +10,6 @@ export const Client = sequelize.define('client',{
     },
     name:{ type:DataTypes.STRING },
     age:{ type: DataTypes.INTEGER },
-    cellNumber:{ type: DataTypes.STRING},
-    address:{ type: DataTypes.STRING },
+    cellNumber:{ type: DataTypes.STRING}
 });
 

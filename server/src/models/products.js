@@ -1,6 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from "../database/database.js"; 
 import { Client } from './clients.js';
+import { Billing } from './billings.js';
 
 export const Product = await sequelize.define('product',{
 
@@ -15,12 +16,22 @@ export const Product = await sequelize.define('product',{
 });
 
 
-Product.hasMany(Client,{
+Client.hasMany(Billing,{
+    foreignKey: 'ClientId',
+    SourceKey: 'id'
+});
+
+Billing.belongsTo(Client,{
+    foreignKey: 'ClientId',
+    targetId: 'id'
+})
+
+Product.hasMany(Billing,{
     foreignKey: 'ProductId',
     SourceKey: 'id'
 });
 
-Client.belongsTo(Product,{
+Billing.belongsTo(Product,{
     foreignKey: 'ProductId',
     targetId: 'id'
 })

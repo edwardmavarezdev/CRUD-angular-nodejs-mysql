@@ -6,6 +6,7 @@ import { sequelize } from './database/database.js';
 
 import productRoutes from './routes/productRoutes.js';
 import clientRoutes from './routes/clientRoutes.js';
+import billingRoutes from './routes/billingRoutes.js';
 
 class Server {
 
@@ -37,6 +38,8 @@ class Server {
     routes(){
         this.app.use('/products',productRoutes);
         this.app.use('/clients',clientRoutes);
+        this.app.use('/billing',billingRoutes);
+
     }
 
     start(){

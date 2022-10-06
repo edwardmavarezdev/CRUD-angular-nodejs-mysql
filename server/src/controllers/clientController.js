@@ -15,9 +15,9 @@ class ClientController {
 
     async create (req, res){
         try {
-            const {id, name, age, cellNumber, address, ProductId} = req.body;
+            const {id, name, age, cellNumber, address} = req.body;
             const client = await Client.create({
-                id, name, age, cellNumber, address, ProductId
+                id, name, age, cellNumber, address
             });
             res.json(client);
         } catch (error) {
@@ -28,14 +28,13 @@ class ClientController {
     async update (req, res){
         try {
             const { id } = req.params;
-            const { name, age, cellNumber, address ,ProductId} = req.body;
+            const { name, age, cellNumber, address} = req.body;
             
             const client =  await Client.findByPk(id);
             client.name = name;
             client.age = age;
             client.cellNumber = cellNumber;
             client.address = address;
-            client.ProductId = ProductId;
 
             await client.save();
             res.json({"Client":client})
