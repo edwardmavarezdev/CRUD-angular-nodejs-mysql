@@ -18,7 +18,7 @@ class IndexController {
                 const newProduct = await Product.create({
                     id, name, price, ClientId
                 });
-                res.json(newProduct);
+                res.send(newProduct);
             } catch (error) {
                 return res.status(500).json({Error:error.message})
             }
@@ -33,7 +33,7 @@ class IndexController {
             product.price = price;
 
             await product.save();
-            res.json({"product":product})
+            res.send(product)
 
         }
 

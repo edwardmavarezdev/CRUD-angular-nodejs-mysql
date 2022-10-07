@@ -48,5 +48,4 @@ export class BillingsService {
   getClientsBillings(id:any){
     return this.http.get(`${this.API_URL}billing/${id}/searchBillingsClient`)
   }
-
 }

@@ -19,7 +19,7 @@ class ClientController {
             const client = await Client.create({
                 id, name, age, cellNumber
             });
-            res.json(client);
+            res.send(client);
         } catch (error) {
             return res.status(500).json({Error:error.message})
         }
@@ -36,7 +36,7 @@ class ClientController {
             client.cellNumber = cellNumber;
 
             await client.save();
-            res.json({"Client":client})
+            res.send(client)
         } catch (error) {
             return res.status(500).json({Error:error.message})
         }
@@ -75,7 +75,7 @@ class ClientController {
             const client = await Client.findByPk(id);
             client.ProductId = ProductId;
             await client.save();
-            res.json(client);
+            res.send(client);
             
             //one by one relation test
             /*

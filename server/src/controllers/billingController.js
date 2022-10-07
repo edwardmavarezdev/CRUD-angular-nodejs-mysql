@@ -18,7 +18,7 @@ class BillingController {
             const billing = await Billing.create({
                 id, clientName, locationProduct, afiliatedPrice, fiscalAddress, serviceName
             });
-            res.json(billing);
+            res.send(billing);
         } catch (error) {
             return res.status(500).json({Error:error.message})
         }
@@ -38,7 +38,7 @@ class BillingController {
 
 
             await billing.save();
-            res.json({"Billing":billing})
+            res.send(billing)
         } catch (error) {
             return res.status(500).json({Error:error.message})
         }
@@ -96,13 +96,13 @@ class BillingController {
     async getBillingfromProduct(req, res){
         const { id } = req.params;
             const billing = await Billing.findAll({where:{ProductId:id}});
-            res.json(billing)
+            res.send(billing)
     }
 
     async getBillingfromClient(req, res){
         const { id } = req.params;
             const billing = await Billing.findAll({where:{ClientId:id}});
-            res.json(billing)
+            res.send(billing)
     }
 
 
