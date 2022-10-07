@@ -11,12 +11,12 @@ import { BillingsService } from 'src/app/services/billings.service';
 })
 export class ClientFormComponent implements OnInit {
 
-  client: any = [{
+  client: any = {
     id: 0,
     name:'',
     age:'',
     cellNumber:''
-  }]
+  }
 
   billings: any = [{
     clientName:''
@@ -55,7 +55,7 @@ export class ClientFormComponent implements OnInit {
     delete this.client.id;
     delete this.client.created_at;
 
-
+    console.log(this.client)
     this.clientService.saveClient(this.client).subscribe(
       (result: any) => {
         this.client = result;
