@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
-
 export class ClientsService {
 
   API_URL= 'http://localhost:3000/'
@@ -41,8 +40,6 @@ export class ClientsService {
   addProductToClient(id: string, client: any){
     return this.http.put(`${this.API_URL}clients/${id}/addProduct`,client)
   }
-
-  
 
 }
 

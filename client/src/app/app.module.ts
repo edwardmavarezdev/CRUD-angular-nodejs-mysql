@@ -15,6 +15,7 @@ import { ClientFormComponent } from './components/client-form/client-form.compon
 import { ProductsFormComponent } from './components/products-form/products-form.component';
 import { AddProductToClientComponent } from './components/add-product-to-client/add-product-to-client.component';
 import { ProductsInClientsComponent } from './components/products-in-clients/products-in-clients.component';
+import { BillingFormComponent } from './components/billing-form/billing-form.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProductsInClientsComponent } from './components/products-in-clients/pro
     ProductsFormComponent,
     AddProductToClientComponent,
     ProductsInClientsComponent,
+    BillingFormComponent,
   ],
   imports: [
     BrowserModule,

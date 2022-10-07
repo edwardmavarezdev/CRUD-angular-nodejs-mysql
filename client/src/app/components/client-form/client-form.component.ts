@@ -14,8 +14,7 @@ export class ClientFormComponent implements OnInit {
     id: 0,
     name:'',
     age:'',
-    cellNumber:'',
-    address:''
+    cellNumber:''
   } 
 
   update:boolean = false;

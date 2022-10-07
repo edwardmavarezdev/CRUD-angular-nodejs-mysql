@@ -30,3 +30,8 @@ ul button:hover{
 ul button:active{
     color:rgb(0, 14, 143);
 }
+
+ul .add{
+    background-color: rgb(114, 243, 237);
+    color: black;
+}

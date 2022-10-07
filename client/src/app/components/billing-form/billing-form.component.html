@@ -1,0 +1,18 @@
+
+<form>
+    <div class="container">
+        <div class="objects-container">
+            <div class="objects">
+                <p>Add clientName</p><p class = "default">{{client.name}}</p>
+                <p>Add serviceName</p><p class = "default">{{product.name}}</p>
+                <p>Add Location Product</p><input type="text" name='locationProduct' [(ngModel)]="billings.locationProduct" placeholder="Location">
+                <p>Add Afiliated Price</p><input type="text" name='afiliatedPrice' [(ngModel)]="billings.afiliatedPrice" placeholder="Instalation Price">
+                <p>Add Fiscal Address</p><input type="text" name='fiscalAddress' [(ngModel)]="billings.fiscalAddress" placeholder="Fiscal Direction">
+                <br>
+                <button  class='save' (click) = "test()">save</button>
+            </div>
+        </div>
+    </div>
+    
+</form>
+    

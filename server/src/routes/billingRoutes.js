@@ -20,6 +20,10 @@ class BillingRoutes {
 
         //relationship  test methods
         this.router.put('/:id/addClient/:idC/addProduct/:idP', billingController.addProduct);
+        this.router.get('/:id/searchBillingsProduct', billingController.getBillingfromProduct)
+        this.router.get('/:id/searchBillingsClient', billingController.getBillingfromClient)
+
+
 
     }
 }

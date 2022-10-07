@@ -93,6 +93,19 @@ class BillingController {
         }  
     }
 
+    async getBillingfromProduct(req, res){
+        const { id } = req.params;
+            const billing = await Billing.findAll({where:{ProductId:id}});
+            res.json(billing)
+    }
+
+    async getBillingfromClient(req, res){
+        const { id } = req.params;
+            const billing = await Billing.findAll({where:{ClientId:id}});
+            res.json(billing)
+    }
+
+
 }
 
 const billingController = new BillingController();

@@ -1,0 +1,11 @@
+.default{
+    width: 95%;
+    height:1.1rem;
+    border:solid rgb(83, 83, 83) 2px;
+    padding-left: 5px;
+}
+
+.save{
+    background-color: rgb(249, 72, 255);
+    color: black;
+}

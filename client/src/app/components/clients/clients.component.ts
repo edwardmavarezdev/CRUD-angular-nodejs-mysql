@@ -15,9 +15,7 @@ export class ClientsComponent implements OnInit {
     id: 0,
     name:'',
     age:'',
-    cellNumber:'',
-    address:'',
-    ProductId:''
+    cellNumber:''
   }]
 
  
@@ -52,6 +50,12 @@ export class ClientsComponent implements OnInit {
   
   addService(id:any){
     this.router.navigate([`/clients/${id}/addProductToCLient`])
+  }
+
+  SeeBillings(id:any){
+    this.router.navigate([`/clients/${id}/billingDelete`])
+    // 'clients/:idC/billing/product/:idP'
+
   }
 
 }
