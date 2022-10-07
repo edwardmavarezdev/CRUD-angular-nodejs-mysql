@@ -47,7 +47,6 @@ export class ProductsInClientsComponent implements OnInit {
     this.billingsService.getProductBillings(id).subscribe(
         (result: any) => {
           this.billings = result;
-          console.log(id)
         }
       )
     } 
@@ -85,6 +84,14 @@ export class ProductsInClientsComponent implements OnInit {
           this.validateGet();
         }
       )
+    }
+
+    toClient(idC:any){
+      this.router.navigate([`/clients/${idC}`]);
+    }
+
+    toProduct(idP:any){
+      this.router.navigate([`/products/${idP}`]);
     }
 
 

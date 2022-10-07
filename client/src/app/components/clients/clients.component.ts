@@ -2,6 +2,7 @@ import { Conditional } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ClientsService } from '../../services/clients.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,10 +20,22 @@ export class ClientsComponent implements OnInit {
   }]
 
  
-  constructor(private clientsService: ClientsService, private router: Router) { }
+  constructor(
+    private clientsService: ClientsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+    ) { }
+
+  url = this.activatedRoute.snapshot.params
+  urlObject = Object.getOwnPropertyNames(this.activatedRoute.snapshot.params)[0]
+    
 
   ngOnInit(){
-    this.get()
+    if(this.urlObject == 'idC'){
+      this.singleClient()
+    }else{
+      this.get()
+    }    
   }
 
   get(){
@@ -30,6 +43,7 @@ export class ClientsComponent implements OnInit {
     this.clientsService.getClients().subscribe(
       (result: any) => {
         this.clients = result;
+
       }
     )
   }
@@ -38,7 +52,6 @@ export class ClientsComponent implements OnInit {
     
     this.clientsService.deleteClient(id).subscribe(
       (result: any) => {
-        console.log(result);
         this.get();
       }
     )
@@ -54,8 +67,15 @@ export class ClientsComponent implements OnInit {
 
   SeeBillings(id:any){
     this.router.navigate([`/clients/${id}/billingDelete`])
-    // 'clients/:idC/billing/product/:idP'
 
+  }
+
+  singleClient(){
+    this.clientsService.getClient(this.url['idC']).subscribe(
+      (result: any) => {
+        this.clients[0] = result;
+      }
+    )
   }
 
 }

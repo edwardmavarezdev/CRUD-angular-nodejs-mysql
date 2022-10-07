@@ -75,7 +75,6 @@ export class BillingFormComponent implements OnInit {
         this.billingsService.addRelationsToBilling(this.billings.id,urlClient,urlProduct,this.billings).subscribe(
           (result: any) => {
             this.billings = result;
-             console.log(this.billings);
           this.router.navigate(['/clients']);
 
           }

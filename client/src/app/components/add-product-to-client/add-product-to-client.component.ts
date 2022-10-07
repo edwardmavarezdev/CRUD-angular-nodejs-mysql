@@ -37,8 +37,6 @@ export class AddProductToClientComponent implements OnInit {
     this.productsService.getProducts().subscribe(
       (result: any) => {
         this.products = result;
-        console.log(result);
-        console.log(this.ClientUrl);
 
       }
     );

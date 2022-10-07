@@ -69,7 +69,18 @@ const routes: Routes = [
   {
     path:'clients/:idC/billingDelete',
     component:ProductsInClientsComponent
+  },
+
+  {
+    path:'clients/:idC',
+    component:ClientsComponent
+  },
+  {
+    path:'products/:idP',
+    component:ProductsComponent
   }
+
+
 ];
 
 @NgModule({

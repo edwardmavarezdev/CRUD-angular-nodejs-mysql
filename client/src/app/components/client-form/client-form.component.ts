@@ -30,7 +30,6 @@ export class ClientFormComponent implements OnInit {
         (result: any) =>{
           this.client = result;
           this.update = true;
-          console.log(this.client)
         }
       )
     }
@@ -43,7 +42,6 @@ export class ClientFormComponent implements OnInit {
     this.clientService.saveClient(this.client).subscribe(
       (result: any) => {
         this.client = result;
-        console.log(this.client)
         this.router.navigate(['/clients']);
       }
     )
