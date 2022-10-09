@@ -14,12 +14,16 @@ export class ClientFormComponent implements OnInit {
   client: any = {
     id: 0,
     name:'',
+    identityCard:'',
     age:'',
     cellNumber:''
   }
 
   billings: any = [{
-    clientName:''
+    clientName:'',
+    clientIdentityCard:'',
+    clientAge:'',
+    clientCellNumner:''
   }]
 
 
@@ -84,6 +88,11 @@ export class ClientFormComponent implements OnInit {
           
         for( let i=0 ; i<this.billings.length; i++){
           this.billings[i].clientName = this.client.name;
+          this.billings[i].clientIdentityCard = this.client.identityCard;
+          this.billings[i].clientAge = this.client.age;
+          this.billings[i].clientCellNumber = this.client.cellNumber;
+
+
 
           this.billingsService.updateBilling(this.billings[i].id,this.billings[i]).subscribe(
             (result: any) => {

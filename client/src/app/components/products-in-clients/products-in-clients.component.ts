@@ -12,20 +12,7 @@ import { BillingsService } from 'src/app/services/billings.service';
 })
 export class ProductsInClientsComponent implements OnInit {
 
-  billings: any = []/* = [{
-    id: 0,
-    clientName : '',
-    locationProduct : '',
-    afiliatedPrice : '',  
-    fiscalAddress : '',
-    serviceName : '',
-    ProductId:'',
-    ClientId:''
-  }]
-/*
-  products: any = [{
-    id:''
-  }]*/  
+  billings: any = [];
  
   constructor(
     private activatedRoute:ActivatedRoute,
@@ -72,6 +59,7 @@ export class ProductsInClientsComponent implements OnInit {
         this.billingsService.getBillings().subscribe(
           (result: any) => {
             this.billings = result;
+            console.log(this.billings)
           }
         )
       }

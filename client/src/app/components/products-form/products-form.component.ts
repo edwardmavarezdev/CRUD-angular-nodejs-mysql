@@ -19,7 +19,8 @@ export class ProductsFormComponent implements OnInit {
   } 
 
   billings: any = [{
-    serviceName:''
+    serviceName:'',
+    servicePrice:''
   }]
 
   update:boolean = false;
@@ -80,6 +81,8 @@ export class ProductsFormComponent implements OnInit {
 
          for( let i=0 ; i<this.billings.length; i++){
           this.billings[i].serviceName = this.product.name;
+          this.billings[i].servicePrice = this.product.price;
+
 
           this.billingsService.updateBilling(this.billings[i].id,this.billings[i]).subscribe(
             (result: any) => {

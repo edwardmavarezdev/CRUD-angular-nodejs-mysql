@@ -16,6 +16,7 @@ export class ClientsComponent implements OnInit {
   clients: any = [{
     id: 0,
     name:'',
+    identityCard:'',
     age:'',
     cellNumber:''
   }]

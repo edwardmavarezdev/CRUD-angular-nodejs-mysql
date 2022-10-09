@@ -3,10 +3,20 @@
 <div class="container">
     <div class="objects-container">
         <div class = 'objects' *ngFor="let billing of billings">
-            <div><p><strong> Billing clientName : </strong></p><p>{{billing.clientName}}</p></div>
-            <div><p><strong> Billing serviceName : </strong></p><p>{{billing.serviceName}}</p></div>
-            <div><p><strong> Billing Location Product : </strong></p><p>{{billing.locationProduct}}</p></div>
-            <div><p><strong> Billing Afiliated Price : </strong></p><p>{{billing.afiliatedPrice}}</p></div>
+            <div><p><strong> Billing Id : </strong></p><p>{{billing.id}}</p></div>
+            <br>
+            <div><p><strong> Billing Client Name : </strong></p><p>{{billing.clientName}}</p></div>
+            <div><p><strong> Billing Client Identity Card : </strong></p><p>{{billing.clientIdentityCard}}</p></div>
+            <div><p><strong> Billing Client Age : </strong></p><p>{{billing.clientAge}}</p></div>
+            <div><p><strong> Billing Client Cellphone : </strong></p><p>{{billing.clientCellNumber}}</p></div>
+            <br>
+        
+            <div><p><strong> Billing Service Name : </strong></p><p>{{billing.serviceName}}</p></div>
+            <div><p><strong> Billing Service Monthly Price : </strong></p><p>{{billing.servicePrice}}</p></div>
+            <br>
+
+            <div><p><strong> Billing Location Service : </strong></p><p>{{billing.locationProduct}}</p></div>
+            <div><p><strong> Billing Afiliation Price : </strong></p><p>{{billing.afiliatedPrice}}</p></div>
             <div><p><strong> Billing Fiscal Address : </strong></p><p>{{billing.fiscalAddress}}</p></div>
             <div><p><strong> Billing ProductId : </strong></p><p>{{billing.ProductId}}</p></div>
             <div><p><strong> Billing ClientId : </strong></p><p>{{billing.ClientId}}</p></div>

@@ -16,18 +16,26 @@ export class BillingFormComponent implements OnInit {
 
   client: any = {
     id:'',
-    name:''
+    name:'',
+    identityCard:'',
+    age:'',
+    cellNumber:''
   }
 
   product: any = {
     id:'',
-    name:''
+    name:'',
+    price:''
   }
 
   billings: any = {
     id: 0,
     clientName : '',
+    clientIdentityCard:'',
+    clientAge:'',
+    clientCellNumber:'',
     serviceName : '',
+    servicePrice:'',
     locationProduct : '',
     afiliatedPrice : '',
     fiscalAddress : ''
@@ -52,14 +60,21 @@ export class BillingFormComponent implements OnInit {
     this.clientsService.getClient(urlClient).subscribe(
       (result: any) => {
         this.client = result;
+        console.log(this.client)
        this.billings.clientName = this.client.name;
+       this.billings.clientIdentityCard = this.client.identityCard;
+       this.billings.clientAge = this.client.age;
+       this.billings.clientCellNumber = this.client.cellNumber;
+
       }
     );
     const urlProduct = this.activatedRoute.snapshot.params['idP'];
     this.productsService.getProduct(urlProduct).subscribe(
       (result: any) => {
         this.product = result;
+        console.log(this.product)
          this.billings.serviceName = this.product.name;
+         this.billings.servicePrice = this.product.price;
       }
     );
   }

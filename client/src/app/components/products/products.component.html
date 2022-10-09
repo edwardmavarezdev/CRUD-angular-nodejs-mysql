@@ -2,9 +2,9 @@
 <div class="container">
     <div class="objects-container">
         <div class = 'objects' *ngFor="let product of products">
-            <div><p><strong> Product Id : </strong></p><p>{{product.id}}</p></div>
-            <div><p><strong> Product Name : </strong></p><p>{{product.name}}</p></div>
-            <div><p><strong> Product Price : </strong></p><p>{{product.price}}$</p></div>
+            <div><p><strong> Service Id : </strong></p><p>{{product.id}}</p></div>
+            <div><p><strong> Service Name : </strong></p><p>{{product.name}}</p></div>
+            <div><p><strong> Service Monthly Price : </strong></p><p>{{product.price}}$</p></div>
             <div class="buttons">
                 <button class = 'delete' (click) = 'deleteProduct(product.id)' >Delete</button>
                 <button (click) = 'update(product.id)'>Update</button>

@@ -14,9 +14,30 @@ class BillingController {
 
     async create (req, res){
         try {
-            const {id, clientName, locationProduct, afiliatedPrice, fiscalAddress, serviceName} = req.body;
+            const {
+                id, 
+                clientName, 
+                clientIdentityCard,
+                clientAge,
+                clientCellNumber,
+                serviceName,
+                servicePrice,
+                locationProduct,
+                afiliatedPrice,
+                fiscalAddress
+            } = req.body;
+
             const billing = await Billing.create({
-                id, clientName, locationProduct, afiliatedPrice, fiscalAddress, serviceName
+                id, 
+                clientName, 
+                clientIdentityCard,
+                clientAge,
+                clientCellNumber,
+                serviceName,
+                servicePrice,
+                locationProduct,
+                afiliatedPrice,
+                fiscalAddress
             });
             res.send(billing);
         } catch (error) {
@@ -27,14 +48,28 @@ class BillingController {
     async update (req, res){
         try {
             const { id } = req.params;
-            const { clientName, locationProduct, afiliatedPrice, fiscalAddress, serviceName} = req.body;
+            const {
+                clientName, 
+                clientIdentityCard,
+                clientAge,
+                clientCellNumber,
+                serviceName,
+                servicePrice,
+                locationProduct,
+                afiliatedPrice,
+                fiscalAddress
+            } = req.body;
             
             const billing =  await Billing.findByPk(id);
             billing.clientName = clientName;
+            billing.clientIdentityCard = clientIdentityCard;
+            billing.clientAge = clientAge;
+            billing.clientCellNumber = clientCellNumber;
+            billing.serviceName = serviceName; 
+            billing.servicePrice = servicePrice;
             billing.locationProduct = locationProduct;
             billing.afiliatedPrice = afiliatedPrice;
             billing.fiscalAddress = fiscalAddress; 
-            billing.serviceName = serviceName; 
 
 
             await billing.save();
