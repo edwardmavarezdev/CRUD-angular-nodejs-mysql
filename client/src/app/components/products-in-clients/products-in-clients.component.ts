@@ -52,12 +52,12 @@ export class ProductsInClientsComponent implements OnInit {
     } 
 
     getBillingsClients(id:any){
-       this.billingsService.getClientsBillings(id).subscribe(
-           (result: any) => {
-             this.billings = result;
-           }
-         )
-       } 
+      this.billingsService.getClientsBillings(id).subscribe(
+          (result: any) => {
+            this.billings = result;
+          }
+        )
+      } 
 
     validateGet(){
       if(this.productUrlObject=='id'){

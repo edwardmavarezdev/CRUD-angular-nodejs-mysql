@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service'; 
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { BillingsService } from 'src/app/services/billings.service';
 
 @Component({
   selector: 'app-products',
@@ -17,10 +18,14 @@ export class ProductsComponent implements OnInit {
     price:''
   }]
 
+  billings: any = []
+
+
   constructor(
     private productsService: ProductsService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private billingsService: BillingsService
     ) {  }
 
   url = this.activatedRoute.snapshot.params
@@ -45,11 +50,31 @@ export class ProductsComponent implements OnInit {
   }
 
   deleteProduct(id:any){
+
+    this.billingsService.getProductBillings(id).subscribe(
+      (result: any) => {
+        this.billings = result;
+        console.log(this.billings)
+      
+        
+        for(let i=0; i<this.billings.length; i++)
+        this.billingsService.deleteBilling(this.billings[i].id).subscribe(
+          (result: any) =>{
+            console.log(result)
+          }
+        )
+
+      }
+    )
+
     this.productsService.deleteProduct(id).subscribe(
       (result: any) => {
         this.get();
       }
     )
+
+    
+
   }
 
   update(id:any){

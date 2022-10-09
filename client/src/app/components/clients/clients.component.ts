@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientsService } from '../../services/clients.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { BillingsService } from 'src/app/services/billings.service';
 
 
 @Component({
@@ -18,12 +19,14 @@ export class ClientsComponent implements OnInit {
     age:'',
     cellNumber:''
   }]
-
+ 
+  billings: any = []
  
   constructor(
     private clientsService: ClientsService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private billingsService: BillingsService
     ) { }
 
   url = this.activatedRoute.snapshot.params
@@ -50,11 +53,29 @@ export class ClientsComponent implements OnInit {
 
   deleteClient(id:any){
     
+    this.billingsService.getClientsBillings(id).subscribe(
+      (result: any) => {
+        this.billings = result;
+        console.log(this.billings)
+      
+        for(let i=0; i<this.billings.length; i++)
+        this.billingsService.deleteBilling(this.billings[i].id).subscribe(
+          (result: any) =>{
+            console.log(result)
+          }
+        )
+
+      }
+    )
+
     this.clientsService.deleteClient(id).subscribe(
       (result: any) => {
         this.get();
       }
     )
+
+
+
   }
 
   update(id:any){
