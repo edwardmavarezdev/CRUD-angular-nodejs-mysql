@@ -10,16 +10,16 @@ class ClientsRoutes {
     }
 
     config(){
-        //CRUD
+        //CRUD(
         this.router.get('/', clientController.list);
-        this.router.post('/add', clientController.create);
+         this.router.post('/add', clientController.create);
         this.router.put('/:id', clientController.update);
         this.router.delete('/:id', clientController.delete);
         //individual read
         this.router.get('/:id', clientController.getOneById);
 
         //relationship  test methods
-        this.router.put('/:id/addProduct', clientController.addProduct);
+      //  this.router.put('/:id/addProduct', clientController.addProduct);
 
     }
 }

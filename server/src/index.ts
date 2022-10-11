@@ -5,8 +5,8 @@ import cors from 'cors';
 import { sequelize } from './database/database.js';
 
 import productRoutes from './routes/productRoutes.js';
+import billingRoutes from './routes/billingRoutes.js'; 
 import clientRoutes from './routes/clientRoutes.js';
-import billingRoutes from './routes/billingRoutes.js';
 
 class Server {
 
@@ -15,17 +15,17 @@ class Server {
     constructor(){
         this.config();
         this.routes();
-        this.dbSequelize();
+         this.dbSequelize();
     }
 
-    async dbSequelize(){
+     async dbSequelize(){
         try {
             await sequelize.sync();
 
           } catch (error) {
             console.error('Unable to connect to the database:', error);
           }
-    }
+    } 
 
     config(){
         this.app.set('port',process.env.PORT || 3000)
@@ -36,9 +36,10 @@ class Server {
     }
 
     routes(){
-        this.app.use('/products',productRoutes);
+         this.app.use('/products',productRoutes);
+        this.app.use('/billing',billingRoutes); 
         this.app.use('/clients',clientRoutes);
-        this.app.use('/billing',billingRoutes);
+
 
     }
 

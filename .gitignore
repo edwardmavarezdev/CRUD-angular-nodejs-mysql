@@ -6,6 +6,8 @@ client/tmp
 client/out-tsc
 client/bazel-out
 
+compiledjs
+
 # Node
 node_modules
 npm-debug.log

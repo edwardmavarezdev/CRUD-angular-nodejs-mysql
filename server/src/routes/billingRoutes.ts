@@ -1,4 +1,4 @@
-import { Router} from 'express'
+ import { Router} from 'express'
 import billingController from '../controllers/billingController.js';
 
 class BillingRoutes {
@@ -30,4 +30,4 @@ class BillingRoutes {
 }
 
 const billingRoutes = new BillingRoutes();
-export default billingRoutes.router;
+export default billingRoutes.router; 

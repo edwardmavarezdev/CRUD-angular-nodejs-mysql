@@ -1,18 +1,18 @@
-import { Billing } from "../models/billings.js";
+ import { Billing } from "../models/billings.js";
 
 class BillingController {
 
-    async list(req, res){
+    async list(req: any, res: any){
         try {
 
             const billings = await Billing.findAll();
             res.send(billings);
         } catch (error) {
-            return res.status(500).json({Error:error.message})
+            return res.status(500).json({error})
         }
     }
 
-    async create (req, res){
+    async create (req: any, res: any){
         try {
             const {
                 id, 
@@ -41,11 +41,11 @@ class BillingController {
             });
             res.send(billing);
         } catch (error) {
-            return res.status(500).json({Error:error.message})
+            return res.status(500).json({error})
         }
     }
     
-    async update (req, res){
+    async update (req: any, res: any){
         try {
             const { id } = req.params;
             const {
@@ -61,26 +61,28 @@ class BillingController {
             } = req.body;
             
             const billing =  await Billing.findByPk(id);
-            billing.clientName = clientName;
-            billing.clientIdentityCard = clientIdentityCard;
-            billing.clientAge = clientAge;
-            billing.clientCellNumber = clientCellNumber;
-            billing.serviceName = serviceName; 
-            billing.servicePrice = servicePrice;
-            billing.locationProduct = locationProduct;
-            billing.afiliatedPrice = afiliatedPrice;
-            billing.fiscalAddress = fiscalAddress; 
+            if(billing!=null){
+                billing.clientName = clientName;
+                billing.clientIdentityCard = clientIdentityCard;
+                billing.clientAge = clientAge;
+                billing.clientCellNumber = clientCellNumber;
+                billing.serviceName = serviceName; 
+                billing.servicePrice = servicePrice;
+                billing.locationProduct = locationProduct;
+                billing.afiliatedPrice = afiliatedPrice;
+                billing.fiscalAddress = fiscalAddress; 
 
+                await billing.save();
+            }
 
-            await billing.save();
             res.send(billing)
         } catch (error) {
-            return res.status(500).json({Error:error.message})
+            return res.status(500).json({error})
         }
 
     }
 
-    async delete (req, res){
+    async delete (req: any, res: any){
         try {
             const { id } = req.params;
             await Billing.destroy({
@@ -88,53 +90,47 @@ class BillingController {
             });
             res.json('billing was deleted')
         } catch (error) {
-            return res.status(500).json({Error:error.message})
+            return res.status(500).json({error})
         }
     }
 
-    async getOneById(req, res){
+    async getOneById(req: any, res: any){
         try {
             const { id } = req.params
             const billing = await Billing.findByPk(id);
             res.send(billing);
         } catch (error) {
-            return res.status(500).json({Error:error.message})
+            return res.status(500).json({error})
         }
     }
 
     //relationship 
  
-    async addProduct(req, res){
+     async addProduct(req: any, res: any){
         try{
             const { id, idC, idP} = req.params;
             // const { ProductId, ClientId } = req.body;
 
             const billing = await Billing.findByPk(id);
+            if(billing!=null){
             billing.ProductId = idP;
             billing.ClientId = idC;
-
             await billing.save();
+            }
             res.json(billing);
-            
-            //one by one relation test
-            /*
-            const product = await Product.findByPk(ProductId);
-            product.BillingId = id;
-            await product.save();
-            res.json({billing,product});
-            */
+
         } catch (error) {
-            return res.status(500).json({Error:error.message})
+            return res.status(500).json({error})
         }  
     }
 
-    async getBillingfromProduct(req, res){
+    async getBillingfromProduct(req: any, res: any){
         const { id } = req.params;
             const billing = await Billing.findAll({where:{ProductId:id}});
             res.send(billing)
     }
 
-    async getBillingfromClient(req, res){
+    async getBillingfromClient(req: any, res: any){
         const { id } = req.params;
             const billing = await Billing.findAll({where:{ClientId:id}});
             res.send(billing)
@@ -144,4 +140,4 @@ class BillingController {
 }
 
 const billingController = new BillingController();
-export default billingController;    
+export default billingController;     
