@@ -3,9 +3,9 @@ import { Model, InferAttributes, InferCreationAttributes, CreationOptional } fro
 
 
  export const sequelize = new Sequelize(
-    'CRUD',
-    'eddev',
-    'mysqltest',
+    'CRUD',         //add mysqldatabase name
+    'eddev',        //add your mysql username
+    'mysqltest',    //add your mysql password
     {
         host:'localhost',
         dialect:'mysql'
